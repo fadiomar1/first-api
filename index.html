@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>مساعد الدراسة الذكي</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-label="مساعد الدراسة الذكي">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">AI Study Assistant</p>
+            <h1>مساعد ذكي يشرح لك أي موضوع</h1>
+          </div>
+          <span class="status-dot" aria-label="جاهز"></span>
+        </header>
+
+        <form id="ask-form" class="composer">
+          <label for="topic">الموضوع أو السؤال</label>
+          <textarea
+            id="topic"
+            name="topic"
+            rows="6"
+            placeholder="مثال: اشرح لي الفرق بين الذكاء الاصطناعي وتعلم الآلة"
+            required
+          ></textarea>
+
+          <div class="controls">
+            <label>
+              المستوى
+              <select id="level" name="level">
+                <option value="beginner">مبتدئ</option>
+                <option value="intermediate">متوسط</option>
+                <option value="advanced">متقدم</option>
+              </select>
+            </label>
+
+            <label>
+              اللغة
+              <select id="language" name="language">
+                <option value="Arabic">العربية</option>
+                <option value="English">English</option>
+              </select>
+            </label>
+          </div>
+
+          <button id="submit-button" type="submit">اسأل الذكاء الاصطناعي</button>
+        </form>
+      </section>
+
+      <section class="answer-panel" aria-live="polite">
+        <div class="answer-header">
+          <h2>الإجابة</h2>
+          <button id="copy-button" type="button" disabled>نسخ</button>
+        </div>
+        <article id="answer" class="answer empty">
+          اكتب موضوعا في الجهة الأخرى، وستظهر هنا إجابة مرتبة وجاهزة للمراجعة.
+        </article>
+      </section>
+    </main>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
